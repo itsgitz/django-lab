@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'compressor',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -122,3 +123,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Django Compressor configuration
+COMPRESS_ROOT = BASE_DIR / 'static'
+COMPRESS_ENABLED = True
+STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
